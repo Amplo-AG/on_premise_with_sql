@@ -32,12 +32,12 @@ services:
       - 8001:8001
     volumes:
       - .:/usr/src/app # For Postgres persistency
-      # - type: volume
-      #   source: AmploVolume
-      #   target: /static
-      - type: bind
-        source: C:/Users
+      - type: volume
+        source: AmploVolume
         target: /static
+      # - type: bind
+      #   source: C:/Users
+      #   target: /static
     depends_on:
       - db
       - redis
