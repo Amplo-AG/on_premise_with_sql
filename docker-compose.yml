@@ -5,14 +5,14 @@ services:
     #   context: ./frontend
     #   args:
     #     ON_PREMISE: "true"
-    image: onpremiseamplo.azurecr.io/mldevplatform_frontend:v1.0.2
+    image: onpremiseamplo.azurecr.io/mldevplatform_frontend:v1.0.3
     ports:
       - 3000:80
     networks:
       - amplo-net
   backend:
     # build: ./backend
-    image: onpremiseamplo.azurecr.io/mldevplatform_backend:v1.0.2
+    image: onpremiseamplo.azurecr.io/mldevplatform_backend:v1.0.3
     environment:
       - AMPLO_MAIL_PASS=tDQE;6:k;dEL%xYpP)B\J4N;@_>(^tcYA"]ZNAMQ
       - AZURE_STORAGE_CONTAINER=amploplatform
@@ -36,7 +36,7 @@ services:
       #   source: AmploVolume
       #   target: /static
       - type: bind
-        source: C:/Users/betul
+        source: C:/Users
         target: /static
     depends_on:
       - db
