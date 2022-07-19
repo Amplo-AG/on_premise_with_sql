@@ -14,15 +14,6 @@ services:
     # build: ./backend
     image: onpremiseamplo.azurecr.io/mldevplatform_backend:v1.0.3
     environment:
-      - AMPLO_MAIL_PASS=tDQE;6:k;dEL%xYpP)B\J4N;@_>(^tcYA"]ZNAMQ
-      - AZURE_STORAGE_CONTAINER=amploplatform
-      - AZURE_STORAGE_STRING=DefaultEndpointsProtocol=https;AccountName=amploplatformstorage;AccountKey=WF+KkTYhgZGGyTDUkUckSdDaSAJVbirrvryTr8m640wbzuqahXKBdQ5sKKcuAV+c07RJuNEiB2cUFH1yDNqZjw==;EndpointSuffix=core.windows.net
-      - LOCAL_DB=${DB_OUTSIDE}
-      - POSTGRES_HOST=${POSTGRES_HOST}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_NAME=${POSTGRES_NAME}
-      - POSTGRES_PORT=${POSTGRES_PORT}
       - ON_PREMISE=True
       - ONPREMISE_KEY=${ONPREMISE_KEY}
       - ONPREMISE_TEAM=${ONPREMISE_TEAM}
