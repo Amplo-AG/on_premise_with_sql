@@ -1,23 +1,22 @@
 version: "3.8"
 services:
   frontend:
-    # build:
-    #   context: ./frontend
-    #   args:
-    #     ON_PREMISE: "true"
-    image: onpremiseamplo.azurecr.io/mldevplatform_frontend:v1.0.3
+    # build: ./frontend
+    image: amploplatform.azurecr.io/frontend_onpremise:v0
     ports:
       - 3000:80
     networks:
       - amplo-net
   backend:
     # build: ./backend
-    image: onpremiseamplo.azurecr.io/mldevplatform_backend:v1.0.3
+    image: amploplatform.azurecr.io/backend_onpremise:v0
+    tty: true
     environment:
-      - ON_PREMISE=True
       - ONPREMISE_KEY=${ONPREMISE_KEY}
       - ONPREMISE_TEAM=${ONPREMISE_TEAM}
       - INITIAL_ACCOUNT_MAIL=${INITIAL_ACCOUNT_MAIL}
+      - DEVELOPMENT=${DEVELOPMENT}
+      - TEST=${TEST}
     ports:
       - 8000:8080
       - 8001:8001
@@ -27,7 +26,7 @@ services:
         source: AmploVolume
         target: /static
       # - type: bind
-      #   source: C:/Users
+      #   source: /home/runner/work/MLDevPlatform
       #   target: /static
     depends_on:
       - db
