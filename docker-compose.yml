@@ -2,14 +2,14 @@ version: "3.8"
 services:
   frontend:
     # build: ./frontend
-    image: amploplatform.azurecr.io/frontend_onpremise:v0
+    image: amploplatform.azurecr.io/frontend_onpremise:latest
     ports:
       - 3000:80
     networks:
       - amplo-net
   backend:
     # build: ./backend
-    image: amploplatform.azurecr.io/backend_onpremise:v0
+    image: amploplatform.azurecr.io/backend_onpremise:latest
     tty: true
     environment:
       - ONPREMISE_KEY=${ONPREMISE_KEY}
